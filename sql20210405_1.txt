@@ -3,3 +3,14 @@ from employees;
 
 select employee_id,first_name,last_name
 from employees;
+
+select employee_id as 사원번호, first_name as 이름, last_name as 성
+from employees;
+
+// 이름을 바꾸어서 출력
+
+select *
+from employees
+where employees_id>=105;
+
+// employees_id가 105를 넘는 경우만 출력
