@@ -14,3 +14,64 @@ from employees
 where employees_id>=105;
 
 // employees_id가 105를 넘는 경우만 출력
+
+select *
+from employees
+where salary in(10000,17000,24000);
+
+select *
+from employees
+where job_id like 'AD%' ;
+
+-- %조건의 응용 예제1
+select *
+from employees
+where first_name like 'Le%';
+
+-- %조건의 응용 예제2
+select *
+from employees
+where first_name like '%ame%';
+
+-- %조건의 응용 예제3
+select *
+from employees
+where first_name like '%in';
+
+select *
+from employees
+where job_id like 'AD___';
+
+select *
+from employees
+where manager_id IS Null;
+
+select *
+from employees
+where salary>4000
+and job_id='IT_PROG';
+
+select *
+from employees
+where salary>4000
+and job_id='IT_PROG'
+or job_id='FI_ACCOUNT';
+
+-- replace 함수
+select job_id, replace(job_id,'account','accnt') 적용결과
+from employees;
+
+-- lpad : 특정 문자로 왼쪽 자릿수 채우기
+select first_name,lpad(first_name,12,'*') LPAD적용결과
+from employees;
+
+-- rpad : 특정 문자로 왼쪽 자릿수 채우기
+select first_name,rpad(first_name,12,'*') RPAD적용결과
+from employees;
+
+-- ltrim : 왼쪽 문자 삭제, rtrim : 오른쪽 문자 삭제
+select job_id,ltrim(JOB_ID,'F') LTRIM적용결과,rtrim(JOB_ID,'T') RTRIM적용결과
+from employees;
+
+select trim('  Big data   ')
+from dual;
